@@ -1,49 +1,77 @@
 import * as React from "react"
+import { Helmet } from "react-helmet"
 import {Grid, Typography, Divider} from "@material-ui/core"
 import {makeStyles} from "@material-ui/core/styles";
 import Projects from "./components/projects.js"
+import Layout from "./components/layout.js"
 import Header from "./components/header.js"
 import Contact from "./components/contact.js"
-
+import Background from "./images/cool-background.png";
 
 const useStyles = makeStyles({
 	root: {
-      marginTop: 10,
-      marginBottom: 10 
+      paddingTop: 10,
+      paddingBottom: 10, 
 	},
+  main: {
+  },
+  text: {
+  },
+  centerContent: {
+      backgroundColor: 'white',
+  }
 });
 
 const IndexPage = () => {
   const classes = useStyles();
   return (
-      <main>
-          <title>Home Page</title>
-          <Grid container direction="column">
-              {/* Top Header */}
-              <Header/>
+      <main >
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>Home Page</title>
+            <link rel="canonical" href="http://mysite.com/example" />
+          </Helmet>
+          <Layout>
+                <Grid className={classes.main} container direction="column">
 
-              {/* Main Content */}
-              <Grid item container>
-                <Grid item xs={2}></Grid>
-                <Grid item xs={8}>
-                  {/* Name and bio */}
-                  <Typography className={classes.text} align={'center'} >Nathan Kubczak</Typography>
+                  <Grid item container>
+                      <Grid item xs={1}></Grid>
+                      <Grid item xs={10}>
+                         <Header/> 
+                      </Grid>
+                      <Grid item xs={1}></Grid>
+                  </Grid>
 
-                  <Divider className={classes.root}/>
+                  {/* Main Content */}
+                  <Grid  item container>
+                    <Grid item xs={2}></Grid>
+                    <Grid className={classes.centerContent} item xs={8}>
+                      {/* Name and bio */}
+                      <Grid item className={classes.root}>
+                        <Typography variant="h5">Projects</Typography>
+                      </Grid>
 
-                  {/* Projects */}
-                  <Projects />
 
-                  {/* Contact Info */}
-                  <Contact />
 
+                      <Grid item>
+                          <Divider></Divider>
+                      </Grid>
+
+
+                      {/* Projects */}
+                      <Grid item>
+                        <Projects />
+                      </Grid>
+                    
+
+                      {/* Contact Info */}
+                      {/* <Contact /> */}
+
+                    </Grid>
+                    <Grid item xs={2}></Grid>
+                  </Grid>
                 </Grid>
-                <Grid item xs={2}></Grid>
-              </Grid>
-
-              {/* Footer */}
-
-          </Grid>
+          </Layout>
       </main>
   )
 }

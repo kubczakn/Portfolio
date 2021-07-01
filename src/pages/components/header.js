@@ -6,6 +6,14 @@ const useStyles = makeStyles({
 	root: {
 		paddingBottom: 10,		
 	},
+	bar: {
+		backgroundColor: 'white',
+		border: 'none',
+		boxShadow: 'none',
+	},
+	text: {
+		color: 'black'
+	}
 });
 
 // markup
@@ -15,11 +23,11 @@ const Header = () => {
 
 	return (
 		<Grid item xs={12} className={classes.root}>
-			<AppBar position="static">
+			<AppBar className={classes.bar} position="static">
 				<Toolbar>
-				<Typography variant="h6">
-					This is the header
-				</Typography>
+					<Typography className={classes.text} variant="h6">
+						Nathan Kubczak
+					</Typography>
 				</Toolbar>
 			</AppBar>
 		</Grid>
