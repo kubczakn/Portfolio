@@ -22,7 +22,7 @@ const Contact = () => {
 	const classes = useStyles();
 
 	return (
-		<Grid item container direction="row" alignItems="center" justify="center" spacing={10}  className={classes.root}>
+		<Grid id="contact" item container direction="row" alignItems="center" justify="center" spacing={10}  className={classes.root}>
 			<Grid item >
 				<GitHubIcon className={classes.icons}/>
 			</Grid>

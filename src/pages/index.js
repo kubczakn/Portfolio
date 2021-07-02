@@ -1,12 +1,13 @@
 import * as React from "react"
 import { Helmet } from "react-helmet"
-import {Grid, Typography} from "@material-ui/core"
+import {Grid, Typography, Button} from "@material-ui/core"
 import {makeStyles} from "@material-ui/core/styles";
 import Projects from "./components/projects.js"
 import Layout from "./components/layout.js"
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Typewriter from 'typewriter-effect';
 import Contact from "./components/contact.js"
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const useStyles = makeStyles({
 	root: {
@@ -94,9 +95,12 @@ const IndexPage = () => {
                           <Typography style={{display: 'inline-block'}} className={classes.text} variant="h5">
                               Please feel free to take a look at my&nbsp; 
                           </Typography>
-                          <Typography style={{display: 'inline-block'}} className={classes.highlight} variant="h5">resume</Typography>
+                          <Typography style={{display: 'inline-block', cursor: 'pointer'}} className={classes.highlight} variant="h5">resume</Typography>
                           <Typography style={{display: 'inline-block'}} className={classes.text} variant="h5">&nbsp;or&nbsp;</Typography>
-                          <Typography style={{marginBottom: 150, display: 'inline-block'}} className={classes.highlight} variant="h5">contact me!</Typography>
+                          <Typography onClick={() => scrollTo('#contact')} style={{marginBottom: 150, display: 'inline-block', cursor: 'pointer'}} className={classes.highlight} variant="h5">
+                            contact me!
+                          </Typography>
+                          
                         </Grid>
                         
 
@@ -114,7 +118,8 @@ const IndexPage = () => {
                       </Grid>
 
                       <hr className={classes.divider}></hr>
-                      <Contact />
+                      
+                      <Contact/>
 
                     </Grid>
                     <Grid item xs={2}></Grid>

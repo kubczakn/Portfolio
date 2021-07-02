@@ -6,5 +6,7 @@ module.exports = {
             "gatsby-plugin-gatsby-cloud",
             "gatsby-plugin-material-ui",
             `gatsby-plugin-react-helmet`,
+            `gatsby-plugin-smoothscroll`,
           ],
+
 };
