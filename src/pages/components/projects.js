@@ -1,7 +1,12 @@
 import * as React from "react"
-import {Grid, Typography, Card, CardContent, CardMedia, CardActionArea} from "@material-ui/core"
+import {Grid, Typography, Card, CardContent, CardMedia} from "@material-ui/core"
 import {makeStyles} from "@material-ui/core/styles";
-import HaikuPic from "../images/haiku.jpg";
+import HaikuPic from "../static/images/haiku.jpg";
+import RestPic from "../static/images/aa-eats.jpg";
+import EtchPic from "../static/images/etch.jpg";
+import Wallpaper from "../static/images/wallpaper.jpg";
+import TicTac from "../static/images/tic.png";
+import SpotifyPic from "../static/images/spotify.jpg";
 
 const useStyles = makeStyles({
 	root: {
@@ -14,6 +19,8 @@ const useStyles = makeStyles({
 	text: {
 		paddingTop: 10,		
 		paddingBottom: 5,
+		color: 'white',
+		fontFamily: 'Noto Serif TC',
 	},
 	media: {
 		borderRadius: 25,
@@ -33,15 +40,17 @@ const Projects = () => {
 				<Card className={classes.root}>
 					<CardContent>
 						<CardMedia 
-							image={HaikuPic}
+							image={RestPic}
 							className={classes.media}
 						/>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
-							Lizard
+							Ann Arbor Eats	
 						</Typography>
 						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-						Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-						across all continents except Antarctica
+							App that allows users to rate their favorite Ann Arbor restaurants.
+						</Typography>
+						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
+							Built using Spring Boot, React, and Material-UI.
 						</Typography>
 					</CardContent>
 				</Card>
@@ -55,11 +64,13 @@ const Projects = () => {
 							className={classes.media}
 						/>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
-							Lizard
+							Haiku Generator	
 						</Typography>
 						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-						Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-						across all continents except Antarctica
+							Django application that generates Haikus based on data from the WikiQuotes API. 
+						</Typography>
+						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
+							Users can select Haikus based on either a positive or negative sentiment rating. 
 						</Typography>
 					</CardContent>
 				</Card>
@@ -69,15 +80,14 @@ const Projects = () => {
 				<Card className={classes.root}>
 					<CardContent>
 						<CardMedia 
-							image={HaikuPic}
+							image={Wallpaper}
 							className={classes.media}
 						/>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
-							Lizard
+							Wallpaper Generator	
 						</Typography>
 						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-						Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-						across all continents except Antarctica
+							Python script that uses web scraping to randomly generate a desktop wallpaper. 
 						</Typography>
 					</CardContent>
 				</Card>
@@ -87,15 +97,14 @@ const Projects = () => {
 				<Card className={classes.root}>
 					<CardContent>
 						<CardMedia 
-							image={HaikuPic}
+							image={EtchPic}
 							className={classes.media}
 						/>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
-							Lizard
+							Etch-A-Sketch	
 						</Typography>
 						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-						Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-						across all continents except Antarctica
+							Etch-A-Sketch program written in Java.
 						</Typography>
 					</CardContent>
 				</Card>
@@ -105,15 +114,18 @@ const Projects = () => {
 				<Card className={classes.root}>
 					<CardContent>
 						<CardMedia 
-							image={HaikuPic}
+							image={SpotifyPic}
 							className={classes.media}
 						/>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
-							Lizard
+							Artist Tracker	
 						</Typography>
 						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-						Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-						across all continents except Antarctica
+							Python script that creates new playlists for a Spotify user by filtering
+							other playlists by artists.
+						</Typography>
+						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
+							Utilizes the Spotify Web API.
 						</Typography>
 					</CardContent>
 				</Card>
@@ -123,15 +135,14 @@ const Projects = () => {
 				<Card className={classes.root}>
 					<CardContent>
 						<CardMedia 
-							image={HaikuPic}
+							image={TicTac}
 							className={classes.media}
 						/>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
-							Lizard
+							Tic-Tac-Toe
 						</Typography>
 						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-						Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-						across all continents except Antarctica
+							Simple tic-tac-toe game written in C++.
 						</Typography>
 					</CardContent>
 				</Card>

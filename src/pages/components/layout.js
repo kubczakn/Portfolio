@@ -1,5 +1,5 @@
 import React from "react"
-import "./layout.css"
+import "../static/styles/layout.css"
 export default function Layout({ children }) {
   return (
 	<body>{children}</body>
