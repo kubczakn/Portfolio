@@ -5,7 +5,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( (theme) => ({
 	root: {
 		paddingTop: 10,
 		paddingBottom: 10,
@@ -14,8 +14,15 @@ const useStyles = makeStyles({
 	icons: {
 		fontSize: 75,
 		color: 'white',
+		transition: 'transform 0.5s',
+		'&:hover': {
+			transform: 'scale(0.95)',
+		},
+		[theme.breakpoints.down('sm')]: {
+			fontSize: '2.5rem',
+		      },
 	}
-});
+}));
 
 const Contact = () => {
 
@@ -24,17 +31,21 @@ const Contact = () => {
 	return (
 		<Grid id="contact" item container direction="row" alignItems="center" justify="center" spacing={10}  className={classes.root}>
 			<Grid item >
-				<GitHubIcon className={classes.icons}/>
+			<a href = "https://github.com/kubczakn" style={{textDecoration: "none"}} target="blank">
+						<GitHubIcon className={classes.icons}/>	
+			</a>
 			</Grid>
 			<Grid item >
-				<LinkedInIcon className={classes.icons}/>	
+			<a href = "https://www.linkedin.com/in/nathan-kubczak/" style={{textDecoration: "none"}} target="blank">
+						<LinkedInIcon className={classes.icons}/>	
+			</a>
 			</Grid>
 			<Grid item >
-				<MailOutlineIcon className={classes.icons}/>	
+			<a href = "mailto:nathankubczak@gmail.com" style={{textDecoration: "none"}} target="blank">
+						<MailOutlineIcon className={classes.icons}/>	
+			</a>
 			</Grid>
-			{/* <GitHubIcon className={classes.icons}/>
-			<LinkedInIcon className={classes.icons}/>	
-			<MailOutlineIcon className={classes.icons}/>	 */}
+			
 		</Grid>	
 	)
 }

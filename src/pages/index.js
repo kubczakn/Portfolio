@@ -1,6 +1,12 @@
 import * as React from "react"
 import { Helmet } from "react-helmet"
-import {Grid, Typography, Button} from "@material-ui/core"
+import {
+      Grid, 
+      Typography, 
+      createMuiTheme, 
+      MuiThemeProvider,
+      responsiveFontSizes,
+    } from "@material-ui/core"
 import {makeStyles} from "@material-ui/core/styles";
 import Projects from "./components/projects.js"
 import Layout from "./components/layout.js"
@@ -8,8 +14,18 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Typewriter from 'typewriter-effect';
 import Contact from "./components/contact.js"
 import scrollTo from 'gatsby-plugin-smoothscroll';
+import Resume from './static/resume.pdf';
 
-const useStyles = makeStyles({
+// const theme = createMuiTheme();
+
+// theme.typography.h5 = {
+//   [theme.breakpoints.down('sm')]: {
+//     fontSize: '0.5rem',
+//   },
+// };
+
+
+const useStyles = makeStyles((theme) => ({
 	root: {
       paddingTop: 10,
       paddingBottom: 10, 
@@ -27,6 +43,9 @@ const useStyles = makeStyles({
       fontFamily: 'Noto Serif TC',
       textAlign: "center",
       color: 'white',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '1.2rem',
+      },
   },
   divider: {
       width: '30%',
@@ -46,16 +65,19 @@ const useStyles = makeStyles({
     color: 'red',
     borderBottom: '1px solid red',
     fontFamily: 'Noto Serif TC', 
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.2rem',
+    },
   },
 
-});
+}));
 
 const IndexPage = () => {
   const classes = useStyles();
   return (
       <main >
           <Helmet>
-            <meta charSet="utf-8" />
+            <meta charSet="utf-8" name="viewport" content="initial-scale=1" />
             <title>Nathan Kubczak</title>
             <link rel="canonical" href="http://mysite.com/example" />
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -63,68 +85,71 @@ const IndexPage = () => {
             <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300&display=swap" rel="stylesheet"/>
           </Helmet>
           <Layout>
-                <Grid className={classes.main} container direction="column">
-
-                  {/* Main Content */}
-                  <Grid  item container>
-                    <Grid item xs={2}></Grid>
-                    <Grid className={classes.centerContent} item xs={8}>
-                      {/* Name and bio */}
-                      <Grid item className={classes.root}>
-                        <Typography className={classes.name} variant="h3">Hi, I'm Nathan Kubczak</Typography>
-                        <hr className={classes.divider}></hr>
-
-                        <Grid item style={{textAlign: 'center'}}>
-                        <Typography style={{marginBottom: 80, display: 'inline-block'}} className={classes.text} variant="h5">
-                            I'm a&nbsp; 
-                        </Typography>
-                        <Typography variant="h5" style={{display: 'inline-block'}} className={classes.text}>
-                            <Typewriter
-                              options={{
-                                strings: ['computer science student', 'software developer', 'coding enthusiast'],
-                                autoStart: true,
-                                loop: true,
-                              }}
-                            />
-                        </Typography>
-                        </Grid>
-                        
-                        
-
-                        <Grid style={{textAlign: 'center'}} item>
-                          <Typography style={{display: 'inline-block'}} className={classes.text} variant="h5">
-                              Please feel free to take a look at my&nbsp; 
-                          </Typography>
-                          <Typography style={{display: 'inline-block', cursor: 'pointer'}} className={classes.highlight} variant="h5">resume</Typography>
-                          <Typography style={{display: 'inline-block'}} className={classes.text} variant="h5">&nbsp;or&nbsp;</Typography>
-                          <Typography onClick={() => scrollTo('#contact')} style={{marginBottom: 150, display: 'inline-block', cursor: 'pointer'}} className={classes.highlight} variant="h5">
-                            contact me!
-                          </Typography>
-                          
-                        </Grid>
-                        
-
-                        <Grid className={classes.icon}>
-                          <ExpandMoreIcon style={{fontSize: '60'}}/>
-                        </Grid>
-
-                      </Grid>
-
-                      {/* Projects */}
-                      <Grid className={classes.projects} item>
-                        <Typography  className={classes.text} variant="h5">Recent Projects</Typography>
-                        <hr style={{width: '20%', align: 'center', color:'white'}}></hr>
-                        <Projects />
-                      </Grid>
-
+            <MuiThemeProvider >
+               <Grid className={classes.main} container direction="column">
+                {/* Main Content */}
+                <Grid  item container>
+                  <Grid item xs={false} sm={2}></Grid>
+                  <Grid className={classes.centerContent} item xs={12} sm={8}>
+                    {/* Name and bio */}
+                    <Grid item className={classes.root}>
+                      <Typography  className={classes.name} variant="h3">Hi, I'm Nathan Kubczak</Typography>
                       <hr className={classes.divider}></hr>
+
+                      <Grid item style={{textAlign: 'center'}}>
+                      <Typography  style={{marginBottom: 80, display: 'inline-block'}} className={classes.text} variant="h5">
+                          I'm a&nbsp; 
+                      </Typography>
+                      <Typography variant="h5" style={{display: 'inline-block'}} className={classes.text}>
+                          <Typewriter
+                            options={{
+                              strings: ['computer science student', 'software developer', 'coding enthusiast'],
+                              autoStart: true,
+                              loop: true,
+                            }}
+                          />
+                      </Typography>
+                      </Grid>
                       
-                      <Contact/>
+                      
+
+                      <Grid style={{textAlign: 'center'}} item>
+                        <Typography style={{display: 'inline-block'}} className={classes.text} variant="h5">
+                            Please feel free to take a look at my&nbsp; 
+                        </Typography>
+                        <Typography style={{display: 'inline-block', cursor: 'pointer'}} className={classes.highlight} variant="h5">
+                          <a style={{color: 'inherit', textDecoration: 'none'}} href={Resume} target='blank'>resume</a>
+                          </Typography>
+                        <Typography style={{display: 'inline-block'}} className={classes.text} variant="h5">&nbsp;or&nbsp;</Typography>
+                        <Typography onClick={() => scrollTo('#contact')} style={{marginBottom: 150, display: 'inline-block', cursor: 'pointer'}} className={classes.highlight} variant="h5">
+                          contact me!
+                        </Typography>
+                        
+                      </Grid>
+                      
+
+                      <Grid className={classes.icon}>
+                        <ExpandMoreIcon style={{fontSize: '60'}}/>
+                      </Grid>
 
                     </Grid>
-                    <Grid item xs={2}></Grid>
+
+                    {/* Projects */}
+                    <Grid className={classes.projects} item>
+                      <Typography  className={classes.text} variant="h5">Recent Projects</Typography>
+                      <hr style={{width: '20%', align: 'center', color:'white'}}></hr>
+                      <Projects />
+                    </Grid>
+
+                    <hr className={classes.divider}></hr>
+                    
+                    <Contact/>
+
                   </Grid>
+                  <Grid item xs={false} sm={8}></Grid>
                 </Grid>
+              </Grid>
+            </MuiThemeProvider>         
           </Layout>
       </main>
   )

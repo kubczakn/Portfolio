@@ -8,6 +8,9 @@ import Wallpaper from "../static/images/wallpaper.jpg";
 import TicTac from "../static/images/tic.png";
 import SpotifyPic from "../static/images/spotify.jpg";
 
+
+
+
 const useStyles = makeStyles({
 	root: {
 		paddingTop: 10,		
@@ -26,7 +29,14 @@ const useStyles = makeStyles({
 		borderRadius: 25,
 		height: 0,
 		paddingTop: '56.25%', // 16:9
+		transition: 'transform 0.5s',
+		'&:hover': {
+			transform: 'scale(0.95)',
+		}
 	},
+	hover: {
+
+	}
 });
 
 // markup
@@ -39,10 +49,12 @@ const Projects = () => {
 			<Grid item sm={6}>
 				<Card className={classes.root}>
 					<CardContent>
-						<CardMedia 
-							image={RestPic}
-							className={classes.media}
-						/>
+						<a href = "https://github.com/kubczakn/Artist-Track-Bot" style={{textDecoration: "none"}} target="blank">
+							<CardMedia 
+								image={RestPic}
+								className={classes.media}
+							/>
+						</a>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
 							Ann Arbor Eats	
 						</Typography>
@@ -59,10 +71,13 @@ const Projects = () => {
 			<Grid item sm={6}>
 				<Card className={classes.root}>
 					<CardContent>
+						<a href = "https://github.com/kubczakn/Artist-Track-Bot" style={{textDecoration: "none"}} target="blank"> 
 						<CardMedia 
-							image={HaikuPic}
-							className={classes.media}
-						/>
+								image={HaikuPic}
+								className={classes.media}
+							/>
+						</a>
+						
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
 							Haiku Generator	
 						</Typography>
@@ -79,10 +94,12 @@ const Projects = () => {
 			<Grid item sm={6}>
 				<Card className={classes.root}>
 					<CardContent>
-						<CardMedia 
-							image={Wallpaper}
-							className={classes.media}
-						/>
+						<a href = "https://github.com/kubczakn/Quotes" style={{textDecoration: "none"}} target="blank"> 
+							<CardMedia 
+									image={Wallpaper}
+									className={classes.media}
+								/>
+						</a>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
 							Wallpaper Generator	
 						</Typography>
@@ -96,10 +113,12 @@ const Projects = () => {
 			<Grid item sm={6}>
 				<Card className={classes.root}>
 					<CardContent>
-						<CardMedia 
-							image={EtchPic}
-							className={classes.media}
-						/>
+						<a href = "https://github.com/kubczakn/Etch-A-Sketch" style={{textDecoration: "none"}} target="blank"> 
+							<CardMedia 
+									image={EtchPic}
+									className={classes.media}
+								/>
+						</a>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
 							Etch-A-Sketch	
 						</Typography>
@@ -113,10 +132,12 @@ const Projects = () => {
 			<Grid item sm={6}>
 				<Card className={classes.root}>
 					<CardContent>
-						<CardMedia 
-							image={SpotifyPic}
-							className={classes.media}
-						/>
+						<a href = "https://github.com/kubczakn/Artist-Track-Bot" style={{textDecoration: "none"}} target="blank"> 
+							<CardMedia 
+									image={SpotifyPic}
+									className={classes.media}
+								/>
+						</a>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
 							Artist Tracker	
 						</Typography>
@@ -134,10 +155,12 @@ const Projects = () => {
 			<Grid item sm={6}>
 				<Card className={classes.root}>
 					<CardContent>
-						<CardMedia 
-							image={TicTac}
-							className={classes.media}
-						/>
+						<a href = "https://github.com/kubczakn/Tic-Tac" style={{textDecoration: "none"}} target="blank"> 
+							<CardMedia 
+									image={TicTac}
+									className={classes.media}
+								/>
+						</a>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
 							Tic-Tac-Toe
 						</Typography>
