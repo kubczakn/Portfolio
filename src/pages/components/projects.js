@@ -49,7 +49,7 @@ const Projects = () => {
 			<Grid item sm={6}>
 				<Card className={classes.root}>
 					<CardContent>
-						<a href = "https://github.com/kubczakn/Artist-Track-Bot" style={{textDecoration: "none"}} target="blank">
+						<a href = "https://github.com/kubczakn/Ann-Arbor-Eats" style={{textDecoration: "none"}} target="blank">
 							<CardMedia 
 								image={RestPic}
 								className={classes.media}
@@ -71,7 +71,7 @@ const Projects = () => {
 			<Grid item sm={6}>
 				<Card className={classes.root}>
 					<CardContent>
-						<a href = "https://github.com/kubczakn/Artist-Track-Bot" style={{textDecoration: "none"}} target="blank"> 
+						<a href = "https://github.com/kubczakn/Quotes" style={{textDecoration: "none"}} target="blank"> 
 						<CardMedia 
 								image={HaikuPic}
 								className={classes.media}
@@ -94,7 +94,7 @@ const Projects = () => {
 			<Grid item sm={6}>
 				<Card className={classes.root}>
 					<CardContent>
-						<a href = "https://github.com/kubczakn/Quotes" style={{textDecoration: "none"}} target="blank"> 
+						<a href = "https://github.com/kubczakn/Wallpaper" style={{textDecoration: "none"}} target="blank"> 
 							<CardMedia 
 									image={Wallpaper}
 									className={classes.media}
