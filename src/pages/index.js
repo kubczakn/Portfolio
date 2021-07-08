@@ -3,9 +3,7 @@ import { Helmet } from "react-helmet"
 import {
       Grid, 
       Typography, 
-      createMuiTheme, 
       MuiThemeProvider,
-      responsiveFontSizes,
     } from "@material-ui/core"
 import {makeStyles} from "@material-ui/core/styles";
 import Projects from "./components/projects.js"

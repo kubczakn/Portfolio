@@ -3,7 +3,7 @@ import {Grid, Typography, Card, CardContent, CardMedia} from "@material-ui/core"
 import {makeStyles} from "@material-ui/core/styles";
 import HaikuPic from "../static/images/haiku.jpg";
 import RestPic from "../static/images/aa-eats.jpg";
-import EtchPic from "../static/images/etch.jpg";
+import EtchPic from "../static/images/etchPic.jpg";
 import Wallpaper from "../static/images/wallpaper.jpg";
 import TicTac from "../static/images/tic.png";
 import SpotifyPic from "../static/images/spotify.jpg";
