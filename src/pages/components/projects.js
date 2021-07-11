@@ -132,21 +132,20 @@ const Projects = () => {
 			<Grid item sm={6}>
 				<Card className={classes.root}>
 					<CardContent>
-						<a href = "https://github.com/kubczakn/Artist-Track-Bot" style={{textDecoration: "none"}} target="blank"> 
+						<a href = "https://github.com/kubczakn/spotify-recycle" style={{textDecoration: "none"}} target="blank"> 
 							<CardMedia 
 									image={SpotifyPic}
 									className={classes.media}
 								/>
 						</a>
 						<Typography className={classes.text} gutterBottom variant="h5" component="h2">
-							Artist Tracker	
+							Spotify Recycle Bin
 						</Typography>
 						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-							Python script that creates new playlists for a Spotify user by filtering
-							other playlists by artists.
+							Application that allows Spotify users to recover and store deleted tracks in a recycle bin.
 						</Typography>
 						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-							Utilizes the Spotify Web API.
+							Utilizes Flask and the Spotipy library for the Spotify Web API.
 						</Typography>
 					</CardContent>
 				</Card>

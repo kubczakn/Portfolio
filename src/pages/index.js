@@ -14,14 +14,6 @@ import Contact from "./components/contact.js"
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import Resume from './static/resume.pdf';
 
-// const theme = createMuiTheme();
-
-// theme.typography.h5 = {
-//   [theme.breakpoints.down('sm')]: {
-//     fontSize: '0.5rem',
-//   },
-// };
-
 
 const useStyles = makeStyles((theme) => ({
 	root: {
