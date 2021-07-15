@@ -82,7 +82,7 @@ const Projects = () => {
 							Haiku Generator	
 						</Typography>
 						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-							Django application that generates Haikus based on data from the WikiQuotes API. 
+							Django application that generates haikus based on data from the WikiQuotes API. 
 						</Typography>
 						<Typography className={classes.text} variant="body2" color="textSecondary" component="p">
 							Users can select Haikus based on either a positive or negative sentiment rating. 
