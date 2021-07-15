@@ -79,8 +79,8 @@ const IndexPage = () => {
                <Grid className={classes.main} container direction="column">
                 {/* Main Content */}
                 <Grid  item container>
-                  <Grid item xs={false} sm={2}></Grid>
-                  <Grid className={classes.centerContent} item xs={12} sm={8}>
+                  <Grid item xs={false} md={2}></Grid>
+                  <Grid className={classes.centerContent} item sm={12} md={8}>
                     {/* Name and bio */}
                     <Grid item className={classes.root}>
                       <Typography  className={classes.name} variant="h3">Hi, I'm Nathan Kubczak</Typography>
@@ -136,7 +136,7 @@ const IndexPage = () => {
                     <Contact/>
 
                   </Grid>
-                  <Grid item xs={false} sm={8}></Grid>
+                  <Grid item xs={false} md={2}></Grid>
                 </Grid>
               </Grid>
             </MuiThemeProvider>         
